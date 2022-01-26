@@ -4,7 +4,12 @@ const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 3000;
 const db = require("./models/");
 
-app.use(bodyParser.json());
+
+var cors = require('cors')
+
+app.use(bodyParser.json(),cors());
+
+
 
 function success(res, payload) {
   return res.status(200).json(payload);
